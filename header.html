@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+          span {
+              color: red;
+          }
+          input.ng-invalid {
+              border: 1px solid red;
+          }
+          #cart-container {
+            position: relative;
+          }
+#cart-button {
+  background-color: #fdfdfd;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#cart-count-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-radius: 50%;
+  padding: 1px;
+}
+
+      </style>
+    </head>
+
+    <body>
+        <header class="fixed-top">
+            <div class="box-main">
+                <div class="d-flex justify-content-between align-items-end">
+                    <div class="col-md-8 ">
+                        <a href="#!home"><img src="images/z5070591559643_37f39d3299f58e056fafd3a7ec7f67bd.jpg" alt=""></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg bg- rounded-2 " style="background-color:#FF0000; font-weight: 700;">
+              <div class="container-fluid">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarScroll"
+                  aria-controls="navbarScroll"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarScroll">
+                  <ul
+                    class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll m-auto "
+                    style="--bs-scroll-height: 150px;  "
+                    
+                  >
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active  text-light " 
+                        aria-current="page"
+                        href="#!home"
+                      >
+                        TRANG CHỦ</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link  text-light" href="#!about"> GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link  text-light" href="#!tournb"> TOUR NHẬT BẢN</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link  text-light" href=" #!tourvn"> TOUR VIỆT-NHẬT</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link  text-light" href=""> TIN TỨC</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        TÀI KHOẢN
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#!dangnhap" >Đăng nhập</a></li>
+                        <li><a class="dropdown-item" href="#!dangky" >Đăng kí</a></li>
+                      </ul>
+                      <li class="nav-item">
+                        <form class="d-flex ms-auto float-sm-end" role="search">
+                          <input type="text" ng-model="keySearch"
+                              ng-change="search(keySearch)" class="form-control
+                              me-2"
+                              placeholder="Tìm kiếm" aria-label="Search" />
+                      </li>
+                    </li>
+                    <li class="nav-item" >
+                      <div id="cart-container">
+                        <button type="button" class="btn btn-light btn-lg" style="  background-color: #436c80;
+                        border: none;
+                        padding: 5px 20px 5px 20px;
+                        border-radius: 20%;
+                        cursor: pointer;">
+                          <a href="#!giohang" class="text-decoration-none text-light"><i class="bi bi-cart3"></i></a>
+                          <span id="cart-count" ng-repeat=" p in cart" style="position: absolute;
+                          top: 0;
+                          right: 5px;
+                          background-color: #436c80;
+                          color: rgb(191, 193, 219);
+                          padding: 1px;">{{TongHang()}}</span>
+                        </button>
+                         
+                           
+                       
+                      
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        </header>
+
+
+  <div id="carouselExampleIndicators" class="carousel slide" style="padding-top:145px ;">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/slide1.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/silde2.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/silde3.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/silde4.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/silde5.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="padding-top:130px ;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"  style="padding-top:130px;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+        </body>
+
+</html>

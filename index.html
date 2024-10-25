@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/c1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+    <!-- Nhúng boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <!-- Nhúng angularjs min và route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <!-- Nhúng google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="fixed-top">
+        <div class="box-main">
+            <div class="d-flex justify-content-between align-items-end">
+                <div class="col-md-8 ">
+                    <a href="#!home"><img src="images/z5070591559643_37f39d3299f58e056fafd3a7ec7f67bd.jpg" alt=""></a>
+                </div>
+                
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg- rounded-2 " style="background-color:#FF0000; font-weight: 700;">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarScroll">
+              <ul
+                class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll m-auto "
+                style="--bs-scroll-height: 150px;  "
+                
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link active  text-light " 
+                    aria-current="page"
+                    href="#!home"
+                  >
+                    TRANG CHỦ</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  text-light" href="#!about"> GIỚI THIỆU</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  text-light" href="#!tournb"> TOUR NHẬT BẢN</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  text-light" href=" #!tourvn"> TOUR VIỆT-NHẬT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  text-light" href=""> TIN TỨC</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    TÀI KHOẢN
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#!dangnhap" >Đăng nhập</a></li>
+                    <li><a class="dropdown-item" href="#!dangky" >Đăng kí</a></li>
+                  </ul>
+                  <li class="nav-item">
+                    <form class="d-flex ms-auto float-sm-end" role="search">
+                      <input type="text" ng-model="keySearch"
+                          ng-change="search(keySearch)" class="form-control
+                          me-2"
+                          placeholder="Tìm kiếm" aria-label="Search" />
+                  </li>
+                </li>
+                <li class="nav-item" >
+                  <div id="cart-container">
+                    <button type="button" class="btn btn-light btn-lg" style="  background-color: #436c80;
+                    border: none;
+                    padding: 5px 20px 5px 20px;
+                    border-radius: 20%;
+                    cursor: pointer;">
+                      <a href="#!giohang" class="text-decoration-none text-light"><i class="bi bi-cart3"></i></a>
+                      <span id="cart-count" ng-repeat=" p in cart" style="position: absolute;
+                      top: 0;
+                      right: 5px;
+                      background-color: #436c80;
+                      color: rgb(191, 193, 219);
+                      padding: 1px;"></span>
+                    </button>
+                     
+                       
+                   
+                  
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <div id="carouselExampleIndicators" class="carousel slide" style="padding-top:145px ;">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/slide1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/silde2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/silde3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/silde4.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/silde5.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="padding-top:130px ;">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"  style="padding-top:130px;">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+   
+    <main> 
+        <section id="listVN">
+            <h2>Danh sách TOUR NHẬT BẢN </h2>
+            <div id="data"></div>
+        </section>
+        <section id="listNB">
+            <h2> Danh sách học viên </h2>
+            <div id="data"></div>
+        </section>
+       
+    </main>
+    <footer class=" col-md-12 text-center m-auto" style="padding: 30px 0 20px 0;"">
+      <div class="row">
+        <div class="col-md-4"> 
+          <div class="row">
+            <div class=" fw-bold  fs-5">HK Travel Japan</div>
+          <div > 
+            <p>HOANG KIM JAPAN 株式会社</p>
+            <p>本社 : ₸ 110-0015</p>
+            <p>東京都台東区東上野1丁目1番8号竹内ビル</p>
+            <p>Tel : 03-5604-9919 | Fax : 03-6284-2022</p>
+          </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="row"><img src="images/footer.jpg" alt=""></div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="row">
+            <div class="fw-bold  fs-5">CHỨNG NHẬN & KẾT NỐI</div>
+          <div class="row m-auto">
+            <div ><img src="images/congthuong.png" alt="" style=" max-width: 100%; padding: 0 10px;" ></div>
+            <div ><img src="images/dmca.png" alt="" style=" max-width: 100%; padding: 0 10px;" ></div>
+          </div>
+          <div class="row m-auto">
+            <div><img src="images/faceinsta.jpg" alt="" style="max-width: 100%; padding: 0 10px;"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+  </footer>
+</body>
+</html>
+<script type="module">
+   import { showlistVN, showlistNB,} from './js/app.js';
+   document.querySelector("#listVN #data").innerHTML = showlistVN();
+   document.querySelector("#listNB #data").innerHTML = showlistNB();
+   
+
+</script>
